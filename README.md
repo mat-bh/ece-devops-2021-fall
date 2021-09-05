@@ -13,6 +13,8 @@ Navigate inside the [`./devops`](devops) folder to read the raw material and acc
 
 The slides are available on Netlify as a static website - [ece-devops-2021-fall.netlify.app](https://ece-devops-2021-fall.netlify.app/).
 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/33fe7da7-8056-40c4-abc1-50563277ba50/deploy-status)](https://app.netlify.com/sites/amazing-goldstine-aa6378/deploys)
+
 ### Build slides locally as a static website
 
 Run the following commands to get the site up and running.
