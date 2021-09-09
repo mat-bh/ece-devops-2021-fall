@@ -215,3 +215,9 @@ Also, you can refer to [this documentation](https://www.makeareadme.com/) to lea
 - Installation instructions
 - Usage instructions
 - Author information
+
+## Bonus tasks
+
+1. Learn and try the [common Bash commands](https://www.educative.io/blog/bash-shell-command-cheat-sheet)
+
+2. Learn to use Vim (run `vimtutor` in the terminal to read the tutorial)
