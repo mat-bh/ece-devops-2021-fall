@@ -73,7 +73,7 @@ const Module = ({ data: {module} }) => {
         </div>
         <div css={styles.icons}>
           <Link to={`${module.slides[0].frontmatter.slug}`}>
-            <Svg title="Slides" href={`${spritesModule}#slideshow`} />
+            <Svg title="Download" href={`${spritesModule}#slideshow`} />
           </Link>
         </div>
       </Container>
@@ -83,9 +83,9 @@ const Module = ({ data: {module} }) => {
         </MDXProvider>
       </Container>
     </main>
-)}
+)};
 
-export default Module
+export default Module;
 
 export const pageQuery = graphql`
   query($path: String!) {

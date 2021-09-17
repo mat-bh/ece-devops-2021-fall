@@ -37,6 +37,7 @@ const styles = {
 const Index = ({
   data: {courses}
 }) => (
+  console.log(courses.nodes[0].frontmatter.feature.childImageSharp.fluid) ||
   <main css={styles.courses}>
     {courses.nodes.map( course =>
       <div css={styles.course} key={course.frontmatter.slug}>
@@ -50,7 +51,7 @@ const Index = ({
             <Link to={course.frontmatter.slug}>{course.frontmatter.title}</Link>
           </h1>
           <dl>
-            <dt>Teacher</dt>
+            <dt>Teachers</dt>
             <dd>{course.frontmatter.authors.join(', ')}</dd>
             <dt>Course</dt>
             <dd>{course.frontmatter.school} - {course.frontmatter.period}</dd>
@@ -59,9 +60,9 @@ const Index = ({
       </div>
     )}
   </main>
-)
+);
 
-export default Index
+export default Index;
 
 export const query = graphql`
   query {

@@ -22,18 +22,19 @@ exports.createSchemaCustomization = ({ actions }) => {
   `)
 }
 
-exports.onCreateNode = async (
-  {actions: {createNode}, createNodeId, node, loadNodeContent, store, cache},
-  {include}
-) => {
-  if (!include) return
-  // Filter non-MDX
+exports.onCreateNode = async (args) => {
+  const { actions, createNodeId, node, loadNodeContent, store, cache } = args
+  const { createNode } = actions
   if (node.internal.type !== `Mdx`) { return }
-  // Filter non-cours
-  const regexp = new RegExp(`${path.resolve(include)}/index.md$`)
-  if (!regexp.test(node.fileAbsolutePath)) return 
+  // Filter non-blog files
+  if(!/courses\/[a-zA-Z0-9_\-\.]+\/index\.md/.test(node.fileAbsolutePath)){ return }
+  node.frontmatter.disabled = !!node.frontmatter.disabled
+  if(node.frontmatter.disabled) return
+  // Lang
+  const filename = path.basename(node.fileAbsolutePath)
   const slug = path.dirname(node.fileAbsolutePath).split(path.sep).pop()
-  node.frontmatter.slug = `/${slug}/`
+  node.frontmatter.slug = `/courses/${slug}/`
+  // BlogArticle
   const copy = {}
   const filter = ['children', 'id', 'internal', 'fields', 'parent', 'type']
   Object.keys(node).map( key => {
@@ -86,7 +87,7 @@ exports.createResolvers = ({ createResolvers }) => {
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  const template = path.resolve(`src/templates/course.js`)
+  const template = path.resolve(`src/templates/Course.js`)
   const result = await graphql(`
     {
       courses: allAcademyCourse {

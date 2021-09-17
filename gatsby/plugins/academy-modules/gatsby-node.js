@@ -20,24 +20,22 @@ exports.createSchemaCustomization = ({ actions }) => {
   `)
 }
 
-exports.onCreateNode = async (
-  {actions: {createNode}, createNodeId, node, loadNodeContent, store, cache},
-  {include}
-) => {
-  if (!include) return
-  // Filter non-MDX
+exports.onCreateNode = async (args) => {
+  const { actions, createNodeId, node, loadNodeContent, store, cache } = args
+  const { createNode } = actions
   if (node.internal.type !== `Mdx`) { return }
-  // Filter non-modules
-  const regexp = new RegExp(`${path.resolve(include)}/.*/index.md$`)
-  if (!regexp.test(node.fileAbsolutePath)) return 
+  // Filter non-blog files
+  if(!/courses\/[a-zA-Z0-9_\-\.]+\/modules\/[a-zA-Z0-9_\-\.]+\/index\.md/.test(node.fileAbsolutePath)){ return }
   node.frontmatter.disabled = !!node.frontmatter.disabled
   if(node.frontmatter.disabled) return
+  // Lang
   const filename = path.basename(node.fileAbsolutePath)
   const slugs = path.dirname(node.fileAbsolutePath).split(path.sep)
   const moduleSlug = slugs.pop()
+  slugs.pop()
   const courseSlug = slugs.pop()
   const [sort, slug] = moduleSlug.split('.')
-  node.frontmatter.slug = `/${courseSlug}/${slug}/`
+  node.frontmatter.slug = `/courses/${courseSlug}/${slug}/`
   node.frontmatter.sort = parseInt(sort)
   // BlogArticle
   const copy = {}
@@ -84,7 +82,7 @@ exports.onCreateNode = async (
       ...originalFrontmatter,
       slideNumber,
       lastSlide: slides.length,
-      slug: `/${courseSlug}/${slug}/slides/${slideNumber}/`,
+      slug: `/courses/${courseSlug}/${slug}/slides/${slideNumber}/`,
     };
     const slideContent = grayMatter.stringify(slide, slideFrontmatter);
     await createSlideFile(slideContent, path.dirname(node.fileAbsolutePath)+'/slides/'+slideNumber);
@@ -141,7 +139,7 @@ exports.createResolvers = ({ createResolvers, createNodeId }) => {
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  const template = path.resolve(`src/templates/module.js`)
+  const template = path.resolve(`src/templates/Module.js`)
   const result = await graphql(`
     {
       modules: allAcademyModule {

@@ -45,7 +45,7 @@ const Course = ({ data: {course} }) => {
       <Container rootStyles={styles.title}>
         <h1>{course.frontmatter.title}</h1>
         <dl>
-          <dt>Teacher</dt>
+          <dt>Teachers</dt>
           <dd>{course.frontmatter.authors.join(', ')}</dd>
           <dt>Course</dt>
           <dd>{course.frontmatter.school} - {course.frontmatter.period}</dd>
@@ -58,16 +58,14 @@ const Course = ({ data: {course} }) => {
         <h2>Modules</h2>
         <ul>
           {course.modules.map( (module, i) =>
-            <li key={i}>
-              <Link to={module.frontmatter.slug}>Module {i} - {module.frontmatter.title || module.frontmatter.slug}</Link>
-            </li>
+            <li><Link to={module.frontmatter.slug}>Module {i} - {module.frontmatter.title || module.frontmatter.slug}</Link></li>
           )}
         </ul>
       </Container>
     </main>
-)}
+)};
 
-export default Course
+export default Course;
 
 export const pageQuery = graphql`
   query($path: String!) {

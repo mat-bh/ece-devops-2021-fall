@@ -15,7 +15,7 @@ const styles = {
   },
 }
 
-const Container = ({
+export default ({
   children,
   className,
   rootStyles,
@@ -25,6 +25,3 @@ const Container = ({
     <div css={{ ...styles.container, ...childStyles }}>{children}</div>
   </div>
 )
-
-
-export default Container

@@ -104,9 +104,10 @@ const Slide = ({ data: {slide} }) => {
         </Link>
       </div>
     </main>
-)}
+  )
+};
 
-export default Slide
+export default Slide;
 
 export const pageQuery = graphql`
   query($path: String!) {

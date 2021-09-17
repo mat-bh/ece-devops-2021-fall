@@ -3,8 +3,8 @@ title: DevOps
 authors:
 - Sergei Kudinov <sergei@adaltas.com>
 school: ECE
-period: Fall 2021
-feature: ./feature.png
+period: Fall 2020
+feature: ./feature/index.png
 ---
 
 # DevOps

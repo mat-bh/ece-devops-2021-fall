@@ -13,20 +13,15 @@ exports.createSchemaCustomization = ({ actions }) => {
       slug: String!
       slideNumber: Int
       lastSlide: Int
+      title: String
     }
   `)
 }
 
-exports.onCreateNode = (
-  {actions: {createNode}, createNodeId, node},
-  {include}
-) => {
-  if (!include) return
-  // Filter non-MDX
+exports.onCreateNode = ({ actions, createNodeId, node }) => {
+  const { createNode } = actions
   if (node.internal.type !== `Mdx`) { return }
-  // Filter non-slides
-  const regexp = new RegExp(`${path.resolve(include)}/.*/slides/.*.mdx$`)
-  if (!regexp.test(node.fileAbsolutePath)) return 
+  if(!/courses\/[a-zA-Z0-9_\-\.]+\/modules\/[a-zA-Z0-9_\-\.]+\/slides\/.*.md/.test(node.fileAbsolutePath)){ return }
   // Import properties
   const copy = {}
   const filter = ['children', 'id', 'internal', 'fields', 'parent', 'type']
@@ -120,7 +115,7 @@ exports.createResolvers = ({ createResolvers, createNodeId }) => {
 
 exports.createPages = async ({ actions, graphql, reporter }) => {
   const { createPage } = actions
-  const template = path.resolve(`src/templates/slide.js`)
+  const template = path.resolve(`src/templates/Slide.js`)
   const result = await graphql(`
     {
       slides: allAcademySlide {
