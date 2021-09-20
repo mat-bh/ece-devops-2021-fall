@@ -25,7 +25,7 @@ This workshop can be done **in groups of 2 people**.
 1. Launch GitHub Desktop
 2. Start the GitHub Desktop Tutorial by clicking "Create a Tutorial Repository ..." and follow the instructions
 
-![GitHub Desktop Tutorial](image/github-tutorial.png)
+![GitHub Desktop Tutorial](image/github-tutorial.jpg)
 
 ## 2. Create a repository and clone it on your computer
 
@@ -56,7 +56,7 @@ You now have a copy of the local repository
 
 1. In GitHub Desktop: **Current branch → New branch**
 
-![Create a branch](image/branch.png)
+![Create a branch](image/branch.jpg)
 
 2. Choose the name of the branch (`develop`) and **"Create branch"**
 
@@ -100,12 +100,12 @@ Alternately, each member merges the new branches into `develop`:
   - Open your IDE as suggested by GitHub Desktop
   - The conflict materializes as follows:
   
-  ![Merge conflict](image/merge.png)
+  ![Merge conflict](image/merge.jpg)
 
   - To resolve the conflict, keep either the `HEAD` part or the `dev-firstname` part and delete the other lines (including the `====` and `>>>>` lines)
   - Once the lines are deleted you can commit the merge from GitHub Desktop:
 
-  ![Resolve conflict](image/resolve-conflict.png)
+  ![Resolve conflict](image/resolve-conflict.jpg)
 
 ## 6. Redo the lab using the command-line interface (CLI)
 

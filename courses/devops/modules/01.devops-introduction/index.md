@@ -22,7 +22,7 @@ The DevOps culture focuses on one goal throughout the entire software delivery l
 
 ## DevOps life cycle
 
-![DevOps life cycle](image/devops.png)
+![DevOps life cycle](image/devops.jpg)
 
 ## Site Reliability Engineering (SRE) implements DevOps
 

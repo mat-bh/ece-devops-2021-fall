@@ -71,7 +71,7 @@ A branch can be temporary:
   - To have a change request
   - To develop an independent feature
     
-![Git branches](image/git_branch.png)
+![Git branches](image/git_branch.jpg)
 
 - Create branches or switch between them with `git branch`
 
@@ -100,7 +100,7 @@ So far:
 
 ## Git: merge vs rebase
 
-![Merge vs Rebase](image/merge-vs-rebase.png)
+![Merge vs Rebase](image/merge-vs-rebase.jpg)
 
 Read this [article on Medium](https://medium.com/datadriveninvestor/git-rebase-vs-merge-cc5199edd77c).
 
