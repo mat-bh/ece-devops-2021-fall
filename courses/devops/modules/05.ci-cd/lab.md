@@ -8,13 +8,16 @@ Continuous Integration & Continuous Delivery (Deployment) (CI/CD)
 1. Part 1. Continuous Integration with GitHub Actions
 2. Part 2. Continuous Delivery (Deployment) with Heroku
 
+## Before starting
+
+Before starting configuring CI/CD to a software project, you need to have its repository on GitHub.
+
+> Note. Skip the following steps if you already have a repository on GitHub containing the application from the previous [Continuous Testing lab](../04.continuous-testing/lab.md).
+
+1. Create a Git repository for the User API project from [04.continuous-testing/assets/userapi/](../04.continuous-testing/assets/userapi/) and commit all the files. 
+2. Create a remote repository on GitHub, link it with the local one, and push the changes.
 
 ## Part 1. Continuous Integration with GitHub Actions
-
-Before starting configuring CI, you need to have a repository on GitHub. Let's create it for the project from Part 1:
-
-- Create a Git repository for the User API project from **Part 1** and commit all the files. 
-- Create a remote repository on GitHub, link it with the local one, and push the changes.
 
 1. Read the [introduction to GitHub Actions](https://docs.github.com/en/actions/learn-github-actions/introduction-to-github-actions).
 
