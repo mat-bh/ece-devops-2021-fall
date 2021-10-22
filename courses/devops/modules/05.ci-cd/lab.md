@@ -47,22 +47,15 @@ Create a pull request to the `master` branch:
 
 1. Create an account on [Heroku](https://heroku.com)
 
-2. Create an app on [Heroku](https://dashboard.heroku.com/new-app) and configure it.
+2. Configure the workflow to deploy to Heroku using [this action](https://github.com/marketplace/actions/deploy-to-heroku) following the [Getting Started guide](https://github.com/marketplace/actions/deploy-to-heroku#getting-started).
 
-Under the "Deploy tab" do:
-
-  - sync the app with the GitHub repository
-  - enable the option "Automatic deploys / Wait for CI to pass before deploy"
-
-3. Add Redis service to Heroku deployment - https://elements.heroku.com/addons/heroku-redis
+3. (Optionally) Add Redis service to Heroku deployment - https://elements.heroku.com/addons/heroku-redis
 
 > Note. Redis service on Heroku is free, but it requires adding credit card information. Considering this limitation we will not run Redis on Heroku, and the application will be partially non-functional (it will print the "Hello world!" message on the home page, but the user API will not work). However, it will be enough to experience our CI/CD pipeline.
 
-4. Configure the workflow to deploy to Heroku using [this guide](https://github.com/marketplace/actions/deploy-to-heroku).
+4. Practice a regular workflow of the software development life cycle like in Part 2.
 
-5. Practice a regular workflow of the software development life cycle like in Part 2.
-
-6. Test your public domain on Heroku.
+5. Test your public domain on Heroku.
 
 ## Bonus tasks
 
