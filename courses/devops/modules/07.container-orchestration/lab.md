@@ -60,7 +60,8 @@ minikube status
 7. List the content of the directory you are in and try to find the JavaScript source code file
 
 8. Make sure that the web app is responding inside the container by querying it with `curl`
-   **Hint** the port on which the app responds is defined in the JavaScript file
+
+   > **Hint.** The port on which the app responds is defined in the `/server.js` JavaScript file
    
 9. Are you able to query the web app outside of the pod (from your local machine)?
 
@@ -70,7 +71,9 @@ minikube status
    ```
    kubectl expose deployments/$DEPLOYMENT_NAME --type="NodePort" --port $PORT_NUMBER
    ```
-   **Hint** You need to replace `$DEPLOYMENT_NAME` with the actual name of the `deployment` as well as `$PORT_NUMBER`
+   
+   > **Hint.** You need to replace `$DEPLOYMENT_NAME` with the actual name of the `deployment` as well as `$PORT_NUMBER`
+   
 2. Find out on which port the service has been attached with:
    ```
    kubectl get services
@@ -81,7 +84,7 @@ minikube status
    ```
 4. Using the answers of questions 2 and 3, open your web browser and try to reach the web app.
 
-**Note!** If you are using Docker driver in Minikube, you must create a tunnel to the cluster node (that is running as a Docker container). Run the command (replace `$SERVICE_NAME` with your service name):
+> **Note!** If you are using Docker driver in Minikube, you must create a tunnel to the cluster node (that is running as a Docker container). Run the command (replace `$SERVICE_NAME` with your service name):
 
 ```
 minikube service $SERVICE_NAME

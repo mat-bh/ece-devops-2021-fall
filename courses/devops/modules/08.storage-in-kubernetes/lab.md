@@ -35,7 +35,7 @@ References:
 - `emptyDir` usage - https://kubernetes.io/docs/concepts/storage/volumes/#emptydir
 - Nginx Docker image usage - https://hub.docker.com/_/nginx
 
-**Hint.** Nginx will start an HTTP web server and respond with the content of HTML files located in `/usr/share/nginx/html` directory.
+> **Hint.** Nginx will start an HTTP web server and respond with the content of HTML files located in `/usr/share/nginx/html` directory.
 
 2. Run a pod applying configuration:
 
