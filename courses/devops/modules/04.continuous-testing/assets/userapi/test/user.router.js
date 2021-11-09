@@ -35,7 +35,7 @@ describe('User REST API', () => {
           done()
         })
         .catch((err) => {
-           throw err
+          done(err)
         })
     })
     
@@ -54,7 +54,7 @@ describe('User REST API', () => {
           done()
         })
         .catch((err) => {
-           throw err
+           done(err)
         })
     })
   })

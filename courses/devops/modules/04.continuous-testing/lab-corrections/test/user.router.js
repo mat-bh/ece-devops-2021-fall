@@ -27,7 +27,7 @@ describe('User REST API', () => {
         lastname: 'Kudinov'
       }
       chai.request(app)
-        .post('/user')
+        .post('/user1')
         .send(user)
         .then((res) => {
           chai.expect(res).to.have.status(201)
@@ -36,7 +36,7 @@ describe('User REST API', () => {
           done()
         })
         .catch((err) => {
-           throw err
+           done(err)
         })
     })
     
@@ -55,7 +55,7 @@ describe('User REST API', () => {
           done()
         })
         .catch((err) => {
-           throw err
+           done(err)
         })
     })
   })
@@ -80,7 +80,7 @@ describe('User REST API', () => {
             done()
           })
           .catch((err) => {
-             throw err
+             done(err)
           })
       })
     })
@@ -95,7 +95,7 @@ describe('User REST API', () => {
           done()
         })
         .catch((err) => {
-           throw err
+           done(err)
         })
     })
   })
