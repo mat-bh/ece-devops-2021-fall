@@ -74,33 +74,62 @@ have a life cycle independent of any individual Pod that uses the PV
 
 2 parts:
 
-1. **PersistentVolumeClaim (PVC)** - a request for storage **by a user**.
-
-```yaml
-apiVersion: v1
-kind: PersistentVolumeClaim
-metadata:
-  name: foo-pvc
-  namespace: foo
-spec:
-  storageClassName: "" # Empty string must be explicitly set otherwise default StorageClass will be set
-  volumeName: foo-pv
-  ...
-```
-
-2. **PersistentVolume (PV)** - a piece of storage in the cluster that has been **provisioned by an administrator**. It has a life cycle independent of any individual Pod that uses the PV.
+1. **PersistentVolume (PV)** - a piece of storage in the cluster that has been **provisioned by an administrator**. It has a life cycle independent of any individual Pod that uses the PV.
 
 ```yaml
 apiVersion: v1
 kind: PersistentVolume
 metadata:
-  name: foo-pv
+  name: task-pv-volume
+  labels:
+    type: local
 spec:
-  storageClassName: ""
-  claimRef:
-    name: foo-pvc
-    namespace: foo
-  ...
+  storageClassName: manual
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  hostPath:
+    path: "/mnt/data"
+```
+
+2. **PersistentVolumeClaim (PVC)** - a request for storage **by a user**.
+
+```yaml
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: task-pv-claim
+spec:
+  storageClassName: manual
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: 3Gi
+```
+
+Then, use the PVC in a Pod, for example:
+
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: task-pv-pod
+spec:
+  volumes:
+    - name: task-pv-storage
+      persistentVolumeClaim:
+        claimName: task-pv-claim
+  containers:
+    - name: task-pv-container
+      image: nginx
+      ports:
+        - containerPort: 80
+          name: "http-server"
+      volumeMounts:
+        - mountPath: "/path/to"
+          name: task-pv-storage
 ```
 
 [Read more](https://kubernetes.io/docs/concepts/storage/persistent-volumes/)
