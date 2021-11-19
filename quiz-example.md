@@ -70,5 +70,5 @@ spec:
 
 1. It creates 6 Deployments, 1 Pod, 1 Service
 2. We don't manage what port of a worker node is allocated to Nginx web server
-3. Nginx web server is accessible on `localhost:80` from Kubernetes cluster
+3. Nginx web server is accessible on `localhost:80` from Kubernetes master node
 4. The service "hello" is stateless
