@@ -2,7 +2,7 @@
 
 ## Deadline
 
-TODO: set deadline
+The evening of December 22, 2021.
 
 ## Opportunities
 
