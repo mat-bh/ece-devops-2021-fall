@@ -27,7 +27,7 @@ describe('User REST API', () => {
         lastname: 'Kudinov'
       }
       chai.request(app)
-        .post('/user1')
+        .post('/user')
         .send(user)
         .then((res) => {
           chai.expect(res).to.have.status(201)
