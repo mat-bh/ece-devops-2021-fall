@@ -152,14 +152,27 @@ List of bonus tasks proposed:
 
 ## How to send a project for evaluation?
 
-1. **ATTENTION!** Make sure your repository is **PRIVATE** and **you have sent an invitation** to teacher's GitHub account - https://github.com/sergkudinov. Otherwise, **if it isn't PRIVATE the final grade will be reduced to 0**.
+1. **ATTENTION!** Make sure your repository is **PRIVATE** and **you have sent an invitation** to [your teacher's GitHub account](#teachers). Otherwise, **if it isn't PRIVATE the final grade will be reduced to 0**.
 
-2. After you have sent the invitation, send an email to [sergei@adaltas.com](mailto:sergei@adaltas.com) containing the following:
+2. After you have sent the invitation, send an email to **your teacher** containing the following:
 
-  - **Subject format:** "ECE - DevOps project - \<LASTNAME Firstname\> - \<Group number (ex: SI03)\>"
+  - **Subject format:** "ECE - DevOps project - \<LASTNAME Firstname\> - \<Group number (ex: Gr01)\>"
   - **Message:**
     - **The link to the repository** on GitHub/GitLab
     - List of authors and **the group number**
+
+## Teachers
+
+- Sergei KUDINOV (github.com/sergkudinov, sergei@adaltas.com):
+  - SI Gr01 (inter)
+  - SI Gr03 (inter)
+  - apprenti SI 01
+  - apprenti SI 02
+- Jules HAMELIN-BOYER (github.com/hamelinboyerj, jules@adaltas.com):
+  - SI Gr02 (fr)
+  - SI Gr06 (fr)
+- Petra KAFERLE (github.com/pkaferle, petra@adaltas.com):
+  - SI Gr04 (fr)
 
 ## Grading system
 
