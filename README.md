@@ -20,8 +20,8 @@ Materials for the DevOps course at ECE.
 The course assignment is consist of:
 
 1. Participation
-2. Project
-3. MCQ exam (multiple choice questions)
+2. [Project](./PROJECT.md)
+3. [MCQ exam](./EXAM.md)
 
 ## Usage
 
